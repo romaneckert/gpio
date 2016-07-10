@@ -3,7 +3,7 @@
 import RPi.GPIO as GPIO
 import time
 
-ledPin = 11
+LedPin = 11
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(LedPin,GPIO.OUT)
