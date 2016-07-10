@@ -7,7 +7,7 @@ LedPin = 11
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(LedPin,GPIO.OUT)
-GPIO.output(LEdPin,GPIO.HIGH)
+GPIO.output(LedPin,GPIO.HIGH)
 
 try:
     while true:
