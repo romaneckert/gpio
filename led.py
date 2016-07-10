@@ -10,7 +10,7 @@ GPIO.setup(LedPin,GPIO.OUT)
 GPIO.output(LedPin,GPIO.HIGH)
 
 try:
-    while true:
+    while True:
         print '...led on'
         GPIO.output(LedPin, GPIO.LOW)
         time.sleep(0.5)
