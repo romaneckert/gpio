@@ -11,10 +11,14 @@ GPIO.output(LedPin,GPIO.HIGH)
 
 try:
     while True:
-        print '...led on'
+
+        print '...start...'
+        GPIO.output(LedPin, GPIO.LOW)
+        time.sleep(2)
+        GPIO.output(LedPin, GPIO.HIGH)
+        time.sleep(0.5)
         GPIO.output(LedPin, GPIO.LOW)
         time.sleep(0.5)
-        print 'led off...'
         GPIO.output(LedPin, GPIO.HIGH)
         time.sleep(0.5)
 
