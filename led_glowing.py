@@ -32,7 +32,7 @@ def update():
     global p13dc_direction
     global p13dc
 
-    p17dc += deltaTime * 100 * p17dc_direction
+    p17dc += deltaTime * 50 * p17dc_direction
 
     if p17dc < 0:
         p17dc = 0
@@ -44,7 +44,7 @@ def update():
 
     p17.ChangeDutyCycle(p17dc)
 
-    p13dc += deltaTime * 100 * p13dc_direction * 3
+    p13dc += deltaTime * 50 * p13dc_direction * 3
 
     if p13dc < 0:
         p13dc = 0
@@ -57,7 +57,6 @@ def update():
     p13.ChangeDutyCycle(p13dc)
 
     print "%s %s" % (p17dc, p17dc_direction)
-
 
 try:
     while True:
@@ -72,8 +71,7 @@ try:
         if sleepTime > 0:
             time.sleep(sleepTime)
 
-        #p17.ChangeDutyCycle(deltaTime)
-
+#       p17.ChangeDutyCycle(deltaTime)
 
 
 except KeyboardInterrupt:
