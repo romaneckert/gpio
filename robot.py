@@ -8,7 +8,7 @@ class Robot(Controller):
         Controller.__init__(self)
 
     def update(self):
-        print "Delate Time: " + str(self.delta_time)
+        print "delta: " + str(self.delta_time)
 
 
 robot = Robot()

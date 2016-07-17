@@ -4,32 +4,27 @@ import time
 
 class Controller:
 
-    fps = 4
+    fps = 60
 
     delta_time = 0
-    start_time = 0
-    loop = 0
+    last_time = 0
 
     def __init__(self):
-        self.start_time = time.time()
+        self.last_time = time.time()
         self.run()
 
     def run(self):
         while True:
-            self.loop = self.loop % self.fps + 1
-
-            self.delta_time = (time.time() - self.start_time) % 1
+            current_time = time.time()
+            self.delta_time = current_time - self.last_time
+            self.last_time = current_time
 
             self.update()
 
-            sleep_time = float(self.loop) / float(self.fps) - ((time.time() - self.start_time) % 1)
+            sleep_time = 1.0/self.fps - time.time() + current_time
 
-            time.sleep(sleep_time)
-
-            #sleep_time = 1.0/self.fps - (time.time() - update_time)
-
-            #if sleep_time > 0:
-
+            if sleep_time > 0:
+                time.sleep(sleep_time)
 
     def update(self):
         print 'must implement update function'
