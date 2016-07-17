@@ -9,11 +9,7 @@ class Controller:
     delta_time = 0
     last_time = 0
 
-    def __init__(self):
-        self.last_time = time.time()
-        self.run()
-
-    def run(self):
+    def activate(self):
         while True:
             current_time = time.time()
             self.delta_time = current_time - self.last_time
